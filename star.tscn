@@ -1,0 +1,60 @@
+[gd_scene load_steps=13 format=3 uid="uid://dhbdpbyaqojxk"]
+
+[ext_resource type="Texture2D" uid="uid://tydbdrioagqj" path="res://star_00.png" id="1_bo7vk"]
+[ext_resource type="Texture2D" uid="uid://chl237vi85lg3" path="res://star_01.png" id="2_son1o"]
+[ext_resource type="Texture2D" uid="uid://d3wkujn15mu6k" path="res://star_02.png" id="3_pe0ws"]
+[ext_resource type="Texture2D" uid="uid://c30l4gorwmfj4" path="res://star_03.png" id="4_kejpj"]
+[ext_resource type="Texture2D" uid="uid://hfdn8lrkxvkv" path="res://star_04.png" id="5_36q7h"]
+[ext_resource type="Texture2D" uid="uid://cy67xgsf5sdes" path="res://star_05.png" id="6_p6min"]
+[ext_resource type="Texture2D" uid="uid://b52f5dru2c51j" path="res://star_06.png" id="7_fr4fu"]
+[ext_resource type="Texture2D" uid="uid://caxbh2pqbgtu6" path="res://star_07.png" id="8_h33qu"]
+[ext_resource type="Texture2D" uid="uid://cj8u5qywjg7jb" path="res://star_08.png" id="9_4wsm5"]
+[ext_resource type="Texture2D" uid="uid://j87klaq37ai0" path="res://star_09.png" id="10_qhy24"]
+[ext_resource type="Script" path="res://star.gd" id="11_bkbjc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_umn0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bo7vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_son1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pe0ws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kejpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_36q7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p6min")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fr4fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h33qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4wsm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qhy24")
+}],
+"loop": true,
+"name": &"star",
+"speed": 5.0
+}]
+
+[node name="star" type="AnimatedSprite2D"]
+visibility_layer = 2
+position = Vector2(10000, 0)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_umn0m")
+animation = &"star"
+autoplay = "star"
+script = ExtResource("11_bkbjc")

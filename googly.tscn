@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbnwp4iiaex0d"]
+
+[ext_resource type="Script" path="res://googly.gd" id="1_tdicu"]
+[ext_resource type="Texture2D" uid="uid://bxipoc0ng8nkl" path="res://enemy_standing.png" id="2_w66aa"]
+[ext_resource type="Texture2D" uid="uid://bp68rhn8yto6c" path="res://enemy_0.png" id="3_tn6jl"]
+[ext_resource type="Texture2D" uid="uid://dn6e7nccd087a" path="res://enemy_1.png" id="4_5fxiu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_umn0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w66aa")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tn6jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5fxiu")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwb88"]
+size = Vector2(32, 32)
+
+[node name="googly" type="RigidBody2D"]
+position = Vector2(10000, 0)
+collision_layer = 4
+lock_rotation = true
+script = ExtResource("1_tdicu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_umn0m")
+animation = &"walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iwb88")
